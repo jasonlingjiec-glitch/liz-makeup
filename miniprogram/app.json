@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/works/works",
+    "pages/service/service",
+    "pages/contact/contact",
+    "pages/album/album"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "LIZ MAKE UP",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#8B8279",
+    "selectedColor": "#14110E",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页" },
+      { "pagePath": "pages/works/works", "text": "作品" },
+      { "pagePath": "pages/service/service", "text": "服务" },
+      { "pagePath": "pages/contact/contact", "text": "联系" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

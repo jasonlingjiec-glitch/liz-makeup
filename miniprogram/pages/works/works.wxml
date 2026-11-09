@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="head wrap">
+    <view class="lang-switch" bindtap="switchLang"><text>{{ui.langSwitch}}</text></view>
+    <text class="eyebrow">{{works.eyebrow}}</text>
+    <view class="h2 sec-title">{{works.title}}</view>
+    <view class="lead head-lead">{{works.lead}}</view>
+  </view>
+
+  <view class="list wrap">
+    <view class="row" wx:for="{{albums}}" wx:key="id" data-id="{{item.id}}" bindtap="openAlbum">
+      <text class="num">{{item.num}}</text>
+      <image class="thumb" src="{{item.cover}}" mode="aspectFill" />
+      <view class="info">
+        <text class="name">{{item.title}}</text>
+        <text class="en" wx:if="{{item.showEn}}">{{item.en}}</text>
+        <text class="meta">{{item.brands}}</text>
+      </view>
+      <text class="count">{{item.count}} {{ui.photoUnit}}</text>
+    </view>
+  </view>
+
+  <view class="note wrap">{{works.note}}</view>
+  <view class="foot">
+    <view class="foot-en">{{meta.brand}}</view>
+    <text class="foot-cn">{{meta.name}} · {{meta.role}}</text>
+  </view>
+</view>

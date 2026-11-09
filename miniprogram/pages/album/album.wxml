@@ -1,0 +1,41 @@
+<view class="page">
+  <view class="head wrap">
+    <view class="lang-switch" bindtap="switchLang"><text>{{ui.langSwitch}}</text></view>
+    <text class="eyebrow">{{ui.style}} {{album.num}} / {{totalNum}}</text>
+    <view class="h2 title">{{album.title}}</view>
+    <text class="en" wx:if="{{album.showEn}}">{{album.en}}</text>
+    <view class="desc lead">{{album.desc}}</view>
+    <view class="tags">
+      <text class="tag" wx:for="{{album.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="grid">
+    <view class="col">
+      <image wx:for="{{left}}" wx:key="*this" src="{{item}}" mode="widthFix" class="ph" />
+    </view>
+    <view class="col">
+      <image wx:for="{{right}}" wx:key="*this" src="{{item}}" mode="widthFix" class="ph" />
+    </view>
+  </view>
+
+  <view class="info wrap">
+    <view class="info-row">
+      <text class="k">{{ui.albumBrandK}}</text>
+      <text class="v">{{album.brands}}</text>
+    </view>
+    <view class="info-row">
+      <text class="k">{{ui.albumCountK}}</text>
+      <text class="v">{{album.countText}}</text>
+    </view>
+  </view>
+
+  <view class="cta wrap">
+    <view class="btn btn-solid btn-block" bindtap="goContact">{{ui.enquireStyle}}</view>
+  </view>
+
+  <view class="foot">
+    <view class="foot-en">{{meta.brand}}</view>
+    <text class="foot-cn">{{meta.name}} · {{meta.role}}</text>
+  </view>
+</view>

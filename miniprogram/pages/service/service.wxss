@@ -1,0 +1,28 @@
+/* 自定义 tabBar 是浮在页面上的，底部留出它的高度 */
+.page{padding-bottom:100rpx;padding-bottom:calc(100rpx + constant(safe-area-inset-bottom));padding-bottom:calc(100rpx + env(safe-area-inset-bottom))}
+
+.head{position:relative;padding-top:56rpx;padding-bottom:52rpx}
+.head-lead{margin-top:28rpx}
+
+.cats{border:1rpx solid var(--line)}
+.cat{padding:36rpx 32rpx;border-bottom:1rpx solid var(--line)}
+.cat:last-child{border-bottom:0}
+.cat-k{display:block;font-size:30rpx;letter-spacing:3rpx}
+.cat-v{display:block;margin-top:18rpx;font-size:24rpx;line-height:1.95;color:var(--body)}
+.cat-n{display:block;margin-top:22rpx;font-size:18rpx;letter-spacing:4rpx;text-transform:uppercase;color:var(--muted)}
+
+.dims{margin-top:56rpx;border-top:1rpx solid var(--line)}
+.dim{padding:34rpx 0;border-bottom:1rpx solid var(--line)}
+.dim-k{display:block;font-size:20rpx;letter-spacing:4rpx;color:var(--muted)}
+.dim-v{display:block;margin-top:14rpx;font-size:25rpx;line-height:1.95;color:var(--ink-2)}
+
+.note{margin-top:52rpx;padding-left:28rpx;border-left:3rpx solid var(--ink)}
+.note-k{display:block;font-size:18rpx;letter-spacing:5rpx;text-transform:uppercase;color:var(--muted)}
+.note-v{margin-top:18rpx;font-size:24rpx;line-height:2;color:var(--ink-2)}
+
+.inc{margin-top:56rpx;border-top:1rpx solid var(--line)}
+.inc-row{display:flex;align-items:flex-start;padding:24rpx 0;border-bottom:1rpx solid var(--line)}
+.inc-n{flex:0 0 60rpx;font-size:18rpx;letter-spacing:2rpx;color:var(--muted);padding-top:6rpx}
+.inc-t{flex:1;font-size:24rpx;color:var(--ink-2)}
+
+.cta{padding-top:56rpx}

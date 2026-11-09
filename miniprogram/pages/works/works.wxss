@@ -1,0 +1,23 @@
+/* 自定义 tabBar 是浮在页面上的，底部留出它的高度 */
+.page{padding-bottom:100rpx;padding-bottom:calc(100rpx + constant(safe-area-inset-bottom));padding-bottom:calc(100rpx + env(safe-area-inset-bottom))}
+
+.head{position:relative;padding-top:56rpx;padding-bottom:56rpx}
+.head-lead{margin-top:28rpx}
+
+.list{border-top:1rpx solid var(--line)}
+.row{
+  display:flex;align-items:center;
+  padding:32rpx 0;
+  border-bottom:1rpx solid var(--line);
+}
+.num{width:56rpx;font-size:20rpx;letter-spacing:2rpx;color:var(--muted)}
+.thumb{width:150rpx;height:196rpx;border-radius:18rpx;background:var(--wash);flex:0 0 150rpx}
+.info{flex:1;min-width:0;padding-left:30rpx}
+.name{display:block;font-size:30rpx;letter-spacing:2rpx}
+.en{display:block;margin-top:8rpx;font-size:18rpx;letter-spacing:4rpx;text-transform:uppercase;color:var(--muted)}
+.meta{
+  display:block;margin-top:12rpx;font-size:20rpx;color:var(--muted);
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+.count{flex:0 0 auto;padding-left:20rpx;font-size:20rpx;color:var(--muted)}
+.note{padding-top:40rpx;padding-bottom:24rpx;font-size:22rpx;letter-spacing:2rpx;color:var(--muted)}

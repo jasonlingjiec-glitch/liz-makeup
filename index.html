@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIZ MAKE UP · 李姿瑶 化妆造型</title>
+<meta name="description" content="李姿瑶，化妆造型师。个人妆造与品牌妆造（童装 / 成人），商拍作品按风格分册。">
+<meta property="og:title" content="LIZ MAKE UP · 李姿瑶 化妆造型">
+<meta property="og:description" content="个人妆造 · 品牌妆造（童装 / 成人）｜商拍作品集">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="LIZ MAKE UP 首页">
+      <span class="brand-en" data-s="meta.brand">LIZ MAKE UP</span>
+      <span class="brand-cn" data-s="meta.name">李姿瑶</span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#works" data-ui="nav.works">作品</a>
+      <a href="#service" data-ui="nav.service">服务与报价</a>
+      <a href="#about" data-ui="nav.about">关于</a>
+      <a href="#contact" data-ui="nav.contact">联系</a>
+    </nav>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Language / 语言">EN</button>
+      <a class="nav-cta" href="#contact" data-ui="cta">预约咨询</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="eyebrow" data-s="hero.eyebrow"></p>
+      <h1 class="hero-title"><span data-s="hero.lines.0"></span><span data-s="hero.lines.1"></span></h1>
+      <p class="hero-sub" data-s="hero.sub"></p>
+      <p class="hero-desc"><span data-s="hero.desc.0"></span><br><span data-s="hero.desc.1"></span></p>
+      <div class="hero-actions">
+        <a class="btn solid" href="#works" data-ui="hero.view">查看作品</a>
+        <a class="btn ghost" href="#contact" data-ui="hero.enquire">预约咨询</a>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img id="heroImg" alt="妆造作品" fetchpriority="high">
+    </div>
+  </section>
+
+  <!-- ================= WORKS ================= -->
+  <section class="section" id="works">
+    <div class="wrap">
+      <header class="sec-head">
+        <div class="sec-left">
+          <p class="eyebrow" data-s="works.eyebrow"></p>
+          <h2 data-s="works.title">作品集</h2>
+        </div>
+        <div class="sec-right">
+          <p class="lead" data-s="works.lead"></p>
+        </div>
+      </header>
+
+      <div class="works" id="worksGrid"></div>
+
+      <p class="works-note" data-s="works.note"></p>
+    </div>
+  </section>
+
+  <!-- ================= SERVICE ================= -->
+  <section class="section wash" id="service">
+    <div class="wrap split">
+      <aside class="split-side">
+        <p class="eyebrow" data-s="service.eyebrow"></p>
+        <h2 data-s="service.title">服务与报价</h2>
+        <p class="lead" data-s="service.lead"></p>
+        <a class="btn ghost" href="#contact" data-ui="side.enquire">预约咨询</a>
+      </aside>
+
+      <div class="split-main">
+        <div class="svc-cats" id="svcCats"></div>
+        <div class="dims" id="dims"></div>
+        <div class="note">
+          <p class="note-k" data-s="service.note.k"></p>
+          <p class="note-v" data-s="service.note.v"></p>
+        </div>
+        <ul class="includes" id="includes"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="section" id="about">
+    <div class="wrap split">
+      <aside class="split-side">
+        <p class="eyebrow" data-s="about.eyebrow"></p>
+        <h2 data-s="about.title">关于</h2>
+      </aside>
+      <div class="split-main">
+        <div id="aboutParas"></div>
+        <div class="clients">
+          <p class="clients-k" data-ui="clientsK">合作品牌</p>
+          <ul class="clients-list" id="clientsList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section wash" id="contact">
+    <div class="wrap split">
+      <aside class="split-side">
+        <p class="eyebrow" data-s="contact.eyebrow"></p>
+        <h2 data-s="contact.title">预约咨询</h2>
+        <p class="lead" data-s="contact.lead"></p>
+      </aside>
+      <div class="split-main">
+        <div class="contact-grid">
+          <ol class="steps" id="steps"></ol>
+
+          <div class="card-qr">
+            <img id="qrImg" alt="微信二维码">
+            <div class="card-qr-info">
+              <p class="card-qr-k">WeChat</p>
+              <p class="card-qr-id" id="wechatId"></p>
+              <button class="copy" id="copyBtn" data-ui="copy">复制微信号</button>
+              <p class="card-qr-note" data-s="meta.location"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <p class="foot-en" data-s="meta.brand"></p>
+      <p class="foot-cn" id="footCn"></p>
+    </div>
+    <nav class="foot-links">
+      <a href="#works" data-ui="nav.works">作品</a><a href="#service" data-ui="nav.service">服务与报价</a><a href="#about" data-ui="nav.about">关于</a><a href="#contact" data-ui="nav.contact">联系</a>
+    </nav>
+    <div class="foot-contact">
+      <p id="footWechat"></p>
+      <p data-s="meta.location"></p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© <span id="year">2026</span> LIZ MAKE UP</span>
+    <span>Photo &amp; Make-up Portfolio</span>
+  </div>
+</footer>
+
+<!-- ================= ALBUM OVERLAY ================= -->
+<div class="album" id="album" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="album-bar">
+    <div class="album-head">
+      <span class="album-num" id="albumNum">01</span>
+      <div>
+        <h3 id="albumTitle"></h3>
+        <p class="album-en" id="albumEn"></p>
+      </div>
+      <p class="album-desc" id="albumDesc"></p>
+    </div>
+    <button class="album-close" id="albumClose" aria-label="关闭相册">
+      <span data-ui="close">关闭</span>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.2"/></svg>
+    </button>
+  </div>
+  <div class="album-scroll" id="albumScroll">
+    <div class="album-grid" id="albumGrid"></div>
+    <div class="album-foot">
+      <p class="album-brands" id="albumBrands"></p>
+      <a class="btn solid" href="#contact" id="albumCta" data-ui="albumCta">按这个风格咨询</a>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="filePicker" accept="image/*" hidden>
+<script src="js/content-data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

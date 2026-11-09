@@ -1,0 +1,41 @@
+<view class="page">
+  <view class="head wrap">
+    <view class="lang-switch" bindtap="switchLang"><text>{{ui.langSwitch}}</text></view>
+    <text class="eyebrow">{{service.eyebrow}}</text>
+    <view class="h2 sec-title">{{service.title}}</view>
+    <view class="lead head-lead">{{service.lead}}</view>
+  </view>
+
+  <view class="cats wrap">
+    <view class="cat" wx:for="{{service.categories}}" wx:key="k">
+      <text class="cat-k">{{item.k}}</text>
+      <text class="cat-v">{{item.v}}</text>
+      <text class="cat-n">{{item.n}}</text>
+    </view>
+  </view>
+
+  <view class="dims wrap">
+    <view class="dim" wx:for="{{service.dims}}" wx:key="k">
+      <text class="dim-k">{{item.k}}</text>
+      <text class="dim-v" wx:for="{{item.v}}" wx:for-item="v" wx:key="*this">{{v}}</text>
+    </view>
+  </view>
+
+  <view class="note wrap">
+    <text class="note-k">{{service.note.k}}</text>
+    <view class="note-v">{{service.note.v}}</view>
+  </view>
+
+  <view class="inc wrap">
+    <view class="inc-row" wx:for="{{includes}}" wx:key="n"><text class="inc-n">{{item.n}}</text><text class="inc-t">{{item.t}}</text></view>
+  </view>
+
+  <view class="cta wrap">
+    <view class="btn btn-solid btn-block" bindtap="goContact">{{ui.book}}</view>
+  </view>
+
+  <view class="foot">
+    <view class="foot-en">{{meta.brand}}</view>
+    <text class="foot-cn">{{meta.name}} · {{meta.role}}</text>
+  </view>
+</view>

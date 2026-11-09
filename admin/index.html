@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LIZ MAKE UP · 后台</title>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<aside class="side">
+  <div class="logo">
+    <div class="logo-en">LIZ MAKE UP</div>
+    <div class="logo-cn">内容管理</div>
+  </div>
+  <nav class="nav">
+    <a href="#basic" class="on">基本信息</a>
+    <a href="#hero">首页文案</a>
+    <a href="#works">作品集</a>
+    <a href="#service">服务与报价</a>
+    <a href="#about">关于</a>
+    <a href="#contact">联系</a>
+    <a href="#publish">生成 / 发布</a>
+  </nav>
+  <div class="side-foot">
+    <a href="/index.html" target="_blank">打开网站 ↗</a>
+  </div>
+</aside>
+
+<main class="main">
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="dot" id="dirty"></span>
+      <span id="statusText">已加载</span>
+      <span class="langsw" id="langSw">
+        <button data-lang="zh" class="on">中文</button>
+        <button data-lang="en">English</button>
+      </span>
+    </div>
+    <div class="topbar-right">
+      <button class="btn ghost" id="btnReload">重新读取</button>
+      <button class="btn solid" id="btnSave">保存并生成</button>
+    </div>
+  </header>
+
+  <div class="content" id="content">
+
+    <!-- 基本信息 -->
+    <section id="basic" class="sec">
+      <h2>基本信息</h2>
+      <p class="hint">出现在网站导航、页脚和小程序标题、页脚。姓名 / 头衔 / 地区会随语言不同，品牌名和微信号两端共用。</p>
+
+      <div class="grid2">
+        <label class="f"><span>品牌名（英文）</span><input data-path="meta.brand"></label>
+        <label class="f"><span>姓名</span><input data-lp="meta.name"></label>
+        <label class="f"><span>身份 / 头衔</span><input data-lp="meta.role"></label>
+        <label class="f"><span>地区</span><input data-lp="meta.location"></label>
+        <label class="f"><span>微信号</span><input data-path="meta.wechat"></label>
+      </div>
+
+      <div class="grid2">
+        <div class="f">
+          <span>首屏大图</span>
+          <div class="thumb-row">
+            <img class="thumb-lg" id="previewHero" alt="">
+            <div class="thumb-actions">
+              <button class="btn sm" data-upload="meta.heroImage">上传 / 替换</button>
+              <input type="hidden" data-path="meta.heroImage">
+              <p class="mini">竖构图 3:4，建议 ≥1200×1600</p>
+            </div>
+          </div>
+        </div>
+        <div class="f">
+          <span>微信二维码</span>
+          <div class="thumb-row">
+            <img class="thumb-qr" id="previewQr" alt="">
+            <div class="thumb-actions">
+              <button class="btn sm" data-upload="meta.qrImage">上传 / 替换</button>
+              <input type="hidden" data-path="meta.qrImage">
+              <p class="mini">正方形，建议 ≥600×600</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 首页文案 -->
+    <section id="hero" class="sec">
+      <h2>首页文案</h2>
+      <p class="hint">首屏的眉标、大标题、副标题和两行说明。</p>
+      <label class="f"><span>眉标（小字）</span><input data-lp="hero.eyebrow"></label>
+      <div class="grid2">
+        <label class="f"><span>大标题 第一行</span><input data-lp="hero.lines.0"></label>
+        <label class="f"><span>大标题 第二行</span><input data-lp="hero.lines.1"></label>
+      </div>
+      <label class="f"><span>副标题</span><input data-lp="hero.sub"></label>
+      <div class="grid2">
+        <label class="f"><span>说明 第一行</span><input data-lp="hero.desc.0"></label>
+        <label class="f"><span>说明 第二行</span><input data-lp="hero.desc.1"></label>
+      </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="works" class="sec">
+      <h2>作品集</h2>
+      <p class="hint">网站和小程序的作品都来自这里。相册顺序 = 展示顺序，每本第一张图是封面。</p>
+
+      <div class="grid2">
+        <label class="f"><span>区块眉标</span><input data-lp="works.eyebrow"></label>
+        <label class="f"><span>区块标题</span><input data-lp="works.title"></label>
+      </div>
+      <label class="f"><span>区块说明</span><textarea rows="2" data-lp="works.lead"></textarea></label>
+      <label class="f"><span>底部提示</span><input data-lp="works.note"></label>
+
+      <div id="albumList" class="albums"></div>
+      <button class="btn ghost add-album" id="btnAddAlbum">＋ 新增相册</button>
+    </section>
+
+    <!-- 服务 -->
+    <section id="service" class="sec">
+      <h2>服务与报价</h2>
+      <div class="grid2">
+        <label class="f"><span>眉标</span><input data-lp="service.eyebrow"></label>
+        <label class="f"><span>标题</span><input data-lp="service.title"></label>
+      </div>
+      <label class="f"><span>说明</span><textarea rows="2" data-lp="service.lead"></textarea></label>
+
+      <h3>两个分类</h3>
+      <div class="grid2">
+        <div class="card">
+          <label class="f"><span>标题</span><input data-lp="service.categories.0.k"></label>
+          <label class="f"><span>说明</span><textarea rows="2" data-lp="service.categories.0.v"></textarea></label>
+          <label class="f"><span>小注</span><input data-lp="service.categories.0.n"></label>
+        </div>
+        <div class="card">
+          <label class="f"><span>标题</span><input data-lp="service.categories.1.k"></label>
+          <label class="f"><span>说明</span><textarea rows="2" data-lp="service.categories.1.v"></textarea></label>
+          <label class="f"><span>小注</span><input data-lp="service.categories.1.n"></label>
+        </div>
+      </div>
+
+      <h3>三个计价维度</h3>
+      <div class="grid3" id="dims"></div>
+
+      <h3>报价说明</h3>
+      <div class="grid2">
+        <label class="f"><span>小标题</span><input data-lp="service.note.k"></label>
+        <label class="f"><span>正文</span><textarea rows="2" data-lp="service.note.v"></textarea></label>
+      </div>
+
+      <h3>服务包含</h3>
+      <label class="f"><span>一行一条</span><textarea rows="4" data-lp="service.includes" data-lines></textarea></label>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" class="sec">
+      <h2>关于</h2>
+      <div class="grid2">
+        <label class="f"><span>眉标</span><input data-lp="about.eyebrow"></label>
+        <label class="f"><span>标题</span><input data-lp="about.title"></label>
+      </div>
+      <label class="f"><span>第一段</span><textarea rows="3" data-lp="about.paras.0"></textarea></label>
+      <label class="f"><span>第二段</span><textarea rows="3" data-lp="about.paras.1"></textarea></label>
+      <label class="f"><span>合作品牌（一行一个）</span><textarea rows="6" data-lp="about.clients" data-lines></textarea></label>
+    </section>
+
+    <!-- 联系 -->
+    <section id="contact" class="sec">
+      <h2>联系 / 预约</h2>
+      <div class="grid2">
+        <label class="f"><span>眉标</span><input data-lp="contact.eyebrow"></label>
+        <label class="f"><span>标题</span><input data-lp="contact.title"></label>
+      </div>
+      <label class="f"><span>说明</span><textarea rows="2" data-lp="contact.lead"></textarea></label>
+      <h3>三步流程</h3>
+      <div class="grid3" id="steps"></div>
+    </section>
+
+    <!-- 生成 -->
+    <section id="publish" class="sec">
+      <h2>生成 / 发布</h2>
+      <p class="hint">
+        点「保存并生成」后：<br>
+        1. 写入 <code>content/content.json</code>；<br>
+        2. 重新生成网站的 <code>js/content-data.js</code> 和小程序的 <code>data/content.js</code>；<br>
+        3. 把小程序的图片按尺寸重压一遍（主包限制 2MB）。<br>
+        小程序需要重新编译（开发者工具里 ⌘B），网站刷新即可。
+      </p>
+      <button class="btn solid" id="btnBuild">只生成，不保存</button>
+      <pre class="report" id="report">还没有生成过。</pre>
+    </section>
+
+  </div>
+</main>
+
+<input type="file" id="filePicker" accept="image/*" multiple hidden>
+<script src="/admin/admin.js"></script>
+</body>
+</html>

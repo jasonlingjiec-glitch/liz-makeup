@@ -1,0 +1,21 @@
+.head{position:relative;padding-top:52rpx;padding-bottom:44rpx}
+.title{margin-top:20rpx}
+.en{display:block;margin-top:14rpx;font-size:20rpx;letter-spacing:6rpx;text-transform:uppercase;color:var(--muted)}
+.desc{margin-top:32rpx}
+.tags{display:flex;gap:14rpx;margin-top:32rpx}
+.tag{
+  padding:8rpx 18rpx;border:1rpx solid var(--line);
+  font-size:18rpx;letter-spacing:3rpx;color:var(--muted);
+}
+
+.grid{display:flex;gap:16rpx;padding:0 48rpx}
+.col{flex:1;min-width:0}
+.ph{width:100%;display:block;border-radius:20rpx;background:var(--wash);margin-bottom:16rpx}
+
+.info{padding-top:48rpx}
+.info-row{display:flex;padding:20rpx 0;border-top:1rpx solid var(--line)}
+.info-row:last-child{border-bottom:1rpx solid var(--line)}
+.k{flex:0 0 90rpx;font-size:20rpx;letter-spacing:3rpx;color:var(--muted)}
+.v{flex:1;font-size:24rpx;line-height:1.9;color:var(--ink-2)}
+
+.cta{padding-top:52rpx}

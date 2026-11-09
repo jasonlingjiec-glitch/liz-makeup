@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="head wrap">
+    <view class="lang-switch" bindtap="switchLang"><text>{{ui.langSwitch}}</text></view>
+    <text class="eyebrow">{{contact.eyebrow}}</text>
+    <view class="h2 sec-title">{{contact.title}}</view>
+    <view class="lead head-lead">{{contact.lead}}</view>
+  </view>
+
+  <view class="steps wrap">
+    <view class="step" wx:for="{{steps}}" wx:key="n">
+      <text class="step-n">{{item.n}}</text>
+      <view class="step-body">
+        <text class="step-t">{{item.t}}</text>
+        <text class="step-d">{{item.d}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card wrap">
+    <view class="card-inner">
+      <image class="qr" src="/{{meta.qrImage}}" mode="aspectFit" show-menu-by-longpress />
+      <view class="card-info">
+        <text class="card-k">{{ui.wechatLabel}}</text>
+        <text class="card-id">{{meta.wechat}}</text>
+        <view class="copy" bindtap="copyWechat">{{ui.copyWechat}}</view>
+        <text class="card-note">{{meta.location}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="hint wrap">{{ui.qrHint}}</view>
+
+  <view class="foot">
+    <view class="foot-en">{{meta.brand}}</view>
+    <text class="foot-cn">{{meta.name}} · {{meta.role}}</text>
+  </view>
+</view>

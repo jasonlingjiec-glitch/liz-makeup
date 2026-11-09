@@ -1,0 +1,67 @@
+<view class="page {{lang === 'en' ? 'lang-en' : ''}}">
+
+  <view class="hero">
+    <image class="hero-img" src="/{{meta.heroImage}}" mode="aspectFill" />
+  </view>
+
+  <view class="intro wrap">
+    <view class="lang-switch" bindtap="switchLang"><text>{{ui.langSwitch}}</text></view>
+
+    <text class="eyebrow">{{hero.eyebrow}}</text>
+    <view class="hero-title">
+      <text class="line" wx:for="{{hero.lines}}" wx:key="*this">{{item}}</text>
+    </view>
+    <text class="hero-sub">{{hero.sub}}</text>
+    <view class="hero-desc lead">
+      <text class="line" wx:for="{{hero.desc}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view class="btn-row hero-actions">
+      <view class="btn btn-solid" bindtap="goWorks">{{ui.viewWorks}}</view>
+      <view class="btn btn-ghost" bindtap="goContact">{{ui.book}}</view>
+    </view>
+  </view>
+
+  <view class="sec">
+    <view class="wrap sec-top">
+      <view>
+        <text class="eyebrow">{{selectedLabel}}</text>
+        <view class="h2 sec-title">{{ui.picksTitle}}</view>
+      </view>
+      <text class="more" bindtap="goWorks">{{ui.more}}</text>
+    </view>
+
+    <scroll-view class="hscroll" scroll-x="true" show-scrollbar="{{false}}" enhanced="{{true}}">
+      <view class="hcard" wx:for="{{picks}}" wx:key="id" data-id="{{item.id}}" bindtap="openAlbum">
+        <image class="hcard-img" src="{{item.cover}}" mode="aspectFill" />
+        <view class="hcard-meta">
+          <text class="hcard-name">{{item.title}}</text>
+          <text class="hcard-en" wx:if="{{item.showEn}}">{{item.en}}</text>
+        </view>
+      </view>
+      <view class="hpad"></view>
+    </scroll-view>
+  </view>
+
+  <view class="sec sec-wash">
+    <view class="wrap">
+      <text class="eyebrow">{{ui.clientsEyebrow}}</text>
+      <view class="h2 sec-title">{{ui.clientsTitle}}</view>
+      <view class="brands">
+        <text class="brand" wx:for="{{about.clients}}" wx:key="*this">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="sec wrap">
+    <text class="eyebrow">{{contact.eyebrow}}</text>
+    <view class="h2 sec-title">{{contact.title}}</view>
+    <view class="lead cta-desc">{{contact.lead}}</view>
+    <view class="btn btn-solid btn-block" bindtap="goContact">{{ui.enquire}}</view>
+  </view>
+
+  <view class="foot">
+    <view class="foot-en">{{meta.brand}}</view>
+    <text class="foot-cn">{{footLine}}</text>
+  </view>
+
+</view>
